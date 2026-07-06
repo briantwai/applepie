@@ -1,0 +1,20 @@
+# Backend
+backend/alma/
+backend/.env
+backend/__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
+frontend/.env*.local
+frontend/dist/
+
+# OS
+.DS_Store
+Thumbs.db
