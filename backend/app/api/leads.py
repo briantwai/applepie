@@ -1,4 +1,5 @@
 # backend/app/api/leads.py
+import uuid
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Form, BackgroundTasks
 from sqlalchemy.orm import Session
 from app.core.database import get_db
@@ -51,7 +52,14 @@ def update_lead_status(
     db: Session = Depends(get_db), 
     current_user: dict = Depends(get_current_user)
 ):
-    lead = db.query(Lead).filter(Lead.id == lead_id).first()
+    # Convert the string path parameter to a real UUID object for SQLite compatibility
+    try:
+        db_uuid = uuid.UUID(lead_id)
+    except ValueError:
+        raise HTTPException(status_code=400, detail="Invalid UUID string format")
+
+    # Use the converted db_uuid object in your query filter
+    lead = db.query(Lead).filter(Lead.id == db_uuid).first()
     if not lead:
         raise HTTPException(status_code=404, detail="Lead not found")
         
