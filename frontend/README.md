@@ -2,35 +2,74 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+cd backend
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Create a local virtual environment mapping
+python3 -m venv venv
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Activate the virtual target system environment
+# On macOS / Linux:
+source venv/bin/activate
+# On Windows (Command Prompt / Powershell):
+venv\\Scripts\\activate
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Install libraries
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+pip install fastapi uvicorn sqlalchemy pydantic python-multipart PyJWT
 
-## Learn More
+# Launch API
 
-To learn more about Next.js, take a look at the following resources:
+uvicorn app.main:app --reload
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Check success
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Success Verification: Your API interface is now tracking at http://127.0.0.1:8000.
 
-## Deploy on Vercel
+Interactive Workbench: View your auto-generated interactive OpenAPI documentation playground directly at http://127.0.0.1:8000/docs.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Note: Upon initializing execution, a native relational engine tracker named leads.db will automatically compile into your root directory layout.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 3. Frontend Installation & Orchestration (Next.js)
+Open a separate, parallel terminal session window (leaving the backend execution terminal running continuously) and interface with the frontend layer:
+
+Step A: Enter Development Context & Dependencies
+Change directory context directly into the frontend infrastructure node and deploy package configurations:
+
+cd frontend
+npm install
+
+Then run npm run dev
+
+# 4. End-to-End Workflow Validation Guide
+# Phase 1: Simulated Lead Capture
+Navigate your workspace browser window to the root frontend interface link: http://localhost:3000.
+
+Input target parameters across the provided fields (First Name, Last Name, Email Contact).
+
+Select an isolated mock asset file matching standard types (.pdf, .doc, .docx) and click Submit Application.
+
+Observe your primary backend terminal instance window to view an automated trace indicating successful asynchronous processing.
+
+# Phase 2: Administrative Gateway Override
+Direct your browser tab into the secure administrative panel space: http://localhost:3000/dashboard.
+
+The authentication shield will render automatically. Provide the following system bypass vectors:
+
+Attorney Email Address: attorney@almalaw.com
+
+System Password: password123
+
+Click Verify & Authenticate to step through the JWT payload layer block.
+
+Phase 3: Transaction State Modification
+The administrative grid workspace will parse the backend payload matrix to display your candidate asset dynamically.
+
+View records alongside real-time parameters, status chips (PENDING), and interactive file links.
+
+Select Mark Reached Out on the client matrix to dispatch a localized pipeline path patch down to the underlying relational storage model. The record will smoothly update to an emerald REACHED_OUT chip state.
+"""
+
+with open("README.md", "w", encoding="utf-8") as f:
+f.write(readme_content)
+
+print("File generated successfully.")
